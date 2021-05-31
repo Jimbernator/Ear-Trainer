@@ -10,10 +10,12 @@ switcher3.addEventListener('click', repeatNote);
 
 var context = new AudioContext()
 var note = 440;
+var lowFreq = 110;
+var highFreq = 880;
 
 function newNote()
 {
-    note = getRandomIntInclusive(110,880);
+    note = getRandomIntInclusive(lowFreq, highFreq);
     playSound(note, "sine");
     this.textContent = note.valueOf();
 }
@@ -69,9 +71,9 @@ function getRandomIntInclusive(min, max) {
 
 var slider = document.getElementById("myRange");
 var output = document.getElementById("demo");
-output.innerHTML = slider.value;
+output.innerHTML = Math.floor(slider.value/100 * (highFreq - lowFreq ) + lowFreq)
 
 slider.oninput = function()
 {
-  output.innerHTML = this.value;
+  output.innerHTML =  Math.floor(this.value/100 * (highFreq - lowFreq ) + lowFreq);
 }
