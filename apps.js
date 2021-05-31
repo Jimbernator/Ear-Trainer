@@ -18,8 +18,10 @@ function playSound(frequency,type)
 }
 
 function toggleTheme()
-{
-    playSound(220, "sine");
+{   
+    //var freq = getRandomFrequency(110,880);
+    //var freq = 880;
+    playSound(880, "sine");
 
     document.body.classList.toggle('dark-theme')
     document.body.classList.toggle('light-theme')
@@ -36,3 +38,14 @@ function toggleTheme()
     }
     console.log('current class name: ' + className);
 }
+
+function getRandomFrequency(min, max)
+{
+    return Math.floor( min + Math.random() * (max - min) );
+}
+
+function getRandomIntInclusive(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1) + min); //The maximum is inclusive and the minimum is inclusive
+  }
