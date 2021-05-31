@@ -55,3 +55,31 @@ li {
   }
 
   .btn:focus { outline-style: none; }
+
+.btn2 {
+    position: absolute;
+    top: 100px;
+    left: 250px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border: none;
+    color: var(--btnFontColor);
+    background-color: var(--btnBg);
+  }
+
+  .btn:focus { outline-style: none; }
+
+.btn3 {
+    position: absolute;
+    top: 180px;
+    left: 250px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border: none;
+    color: var(--btnFontColor);
+    background-color: var(--btnBg);
+  }
+
+  .btn:focus { outline-style: none; }
