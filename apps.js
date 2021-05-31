@@ -4,9 +4,11 @@ const switcher = document.querySelector('.btn');
 
 switcher.addEventListener('click', toggleTheme);
 
+var context = new AudioContext()
+
 function playSound(frequency,type)
 {
-    var context = new AudioContext()
+    /* Don't create too many of these */
     var osc = context.createOscillator()
     var g=context.createGain()
     osc.type = type
@@ -15,13 +17,14 @@ function playSound(frequency,type)
     g.connect(context.destination)
     osc.start()
     g.gain.exponentialRampToValueAtTime(0.00001,context.currentTime+1)
+    // context.close().then(function() {});
+    // await context.close();
 }
 
 function toggleTheme()
 {   
-    //var freq = getRandomFrequency(110,880);
-    //var freq = 880;
-    playSound(880, "sine");
+    var freq = getRandomFrequency(110,880);
+    playSound(freq, "sine");
 
     document.body.classList.toggle('dark-theme')
     document.body.classList.toggle('light-theme')
