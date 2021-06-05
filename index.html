@@ -8,14 +8,16 @@
     </head>
     <body class="light-theme">
         <h1>Pitch Training</h1>
-        <p id="msg"> Current Task:</p>
-        <ul>
-            <li class="list">Start Sound</li>
-            <li class="list">Guess on slider</li>
-            <li>Check Answer</li>
-        </ul>
+
         <div>
             <button class="btn">Dark</button>
+            <button class="btn2">New Note</button>
+            <button class="btn3">Repeat</button>
+        </div>
+        <p>Drag the slider to display the current value.</p>
+        <div class="slidecontainer">
+        <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+        <p>Value: <span id="demo"></span></p>
         </div>
         <script src="apps.js"></script>
         <noscript>You need to enable JavaScript to view the full site.</noscript>
